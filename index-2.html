@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SFYDK — Site Loading</title>
+  <meta name="description" content="SFYDK site loading. NYC under construction." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f6efe7;
+      --ink:#0b2f6b;
+      --muted:#4b5d79;
+      --border:#0b2f6b22;
+      --shadow: 0 18px 60px rgba(11,47,107,.12);
+      --r1: 24px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:"Roboto", system-ui, -apple-system, Segoe UI, Inter, Arial, sans-serif;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+
+    .card{
+      width:min(900px, 95%);
+      background:linear-gradient(to bottom, rgba(255,255,255,.85), rgba(255,255,255,.65));
+      border:1px solid var(--border);
+      border-radius:var(--r1);
+      box-shadow:var(--shadow);
+      padding:40px 30px;
+      position:relative;
+      overflow:hidden;
+      text-align:left;
+    }
+
+    .kicker{
+      font-family:"League Spartan", sans-serif;
+      font-weight:800;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    h1{
+      font-family:"League Spartan", sans-serif;
+      font-weight:900;
+      font-size: clamp(48px, 6vw, 76px);
+      margin:10px 0 10px;
+      line-height:1.05;
+    }
+
+    h1 em{
+      font-family:"Playfair Display", serif;
+      font-style:italic;
+      font-weight:600;
+    }
+
+    .sub{
+      color:var(--muted);
+      max-width:60ch;
+      margin-bottom:20px;
+    }
+
+    .loading{
+      font-family:"League Spartan", sans-serif;
+      font-weight:800;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--ink);
+      opacity:.25;
+      animation:pulse 1.2s infinite ease-in-out;
+    }
+    .dot:nth-child(2){animation-delay:.15s}
+    .dot:nth-child(3){animation-delay:.3s}
+
+    @keyframes pulse{
+      0%,100%{transform:translateY(0);opacity:.25}
+      50%{transform:translateY(-5px);opacity:1}
+    }
+
+    .skyline{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      opacity:.2;
+    }
+
+    .brand{
+      position:absolute;
+      top:20px;
+      right:25px;
+      font-family:"League Spartan", sans-serif;
+      font-weight:900;
+      letter-spacing:.15em;
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="brand">SOMEFRIENDSYOUDON'TKNOW (yet)</div>
+
+    <div class="kicker">NYC — under construction</div>
+    <h1>Site <em>loading</em>.</h1>
+    <p class="sub">
+      We’re building something clean, useful, and very SFYDK:
+      recipes we actually make, parties we plan, and NYC recs worth leaving the apartment for.
+    </p>
+
+    <div class="loading">
+      Installing the vibes
+      <div style="display:flex;gap:6px">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <svg class="skyline" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,260 L0,200 L60,200 L60,160 L100,160 L100,220 L140,220 L140,130 L200,130 L200,220 L240,220 L240,150 L280,150 L280,220 L330,220 L330,100 L390,100 L390,220 L450,220 L450,180 L500,180 L500,220 L560,220 L560,120 L620,120 L620,220 L700,220 L700,90 L760,90 L760,220 L820,220 L820,160 L880,160 L880,220 L940,220 L940,140 L1000,140 L1000,220 L1080,220 L1080,170 L1140,170 L1140,220 L1200,220 L1200,260 Z"
+            fill="var(--ink)" />
+    </svg>
+  </div>
+</body>
+</html>
